@@ -172,9 +172,13 @@ async function load(run=false){
       const tr = document.createElement('tr');
       const price = r.price != null ? ('$' + r.price.toFixed(2) + (r.currency && r.currency!=='USD' ? ' ' + r.currency : '')) : '—';
       const perkg = (r.price != null && r.weightKg) ? ('$' + (r.price / r.weightKg).toFixed(2)) : '—';
-      tr.innerHTML = `<td>${r.brand}</td><td>${r.material}${r.abrasive? ' <span class="tag">abrasive</span>':''}</td>`+
-                     `<td><a href="${r.url}" target="_blank" rel="noopener">${r.product}</a></td>`+
-                     `<td>${price}</td><td>${perkg}</td><td>${new URL(r.url).hostname}</td>`;
+      tr.innerHTML =
+        '<td>' + r.brand + '</td>' +
+        '<td>' + r.material + (r.abrasive ? ' <span class="tag">abrasive</span>' : '') + '</td>' +
+        '<td><a href="' + r.url + '" target="_blank" rel="noopener">' + r.product + '</a></td>' +
+        '<td>' + price + '</td>' +
+        '<td>' + perkg + '</td>' +
+        '<td>' + (new URL(r.url)).hostname + '</td>';
       tbody.appendChild(tr);
     });
 }
