@@ -1,4 +1,4 @@
-name = "p1s-filament-tracker"
+name = "filament-tracker"
 main = "src/index.ts"
 compatibility_date = "2025-09-01"
 
