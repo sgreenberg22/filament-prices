@@ -1,4 +1,4 @@
-name = "filament-tracker"
+name = "filament"   # match what the CI expects per your log
 main = "src/index.ts"
 compatibility_date = "2025-09-01"
 
